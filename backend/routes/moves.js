@@ -19,4 +19,7 @@ router.post("/", moves.newMove);
 // PUT /moves/:id also the Update route
 router.put("/:moveId", moves.updateMove);
 
+// DELETE /moves/:id also the Destroy route
+router.delete("/:moveId", moves.deleteMove);
+
 module.exports = router;

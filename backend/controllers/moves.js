@@ -44,8 +44,24 @@ async function updateMove(req, res) {
   }
 }
 
+// DELETE /moves/:id also the Destroy route
+async function deleteMove(req, res) {
+  try {
+    const move = await Moving.findById(req.params.moveId).populate("userId");
+    if (!move.userId.equals(req.user._id)) {
+      return res.status(403).send("You're not allowed to do that!");
+    }
+    const deletedMove = await Moving.findByIdAndDelete(req.params.moveId);
+    res.status(200).json(deletedMove);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
+};
+
 module.exports = {
   movesIndex,
   newMove,
   updateMove,
+  deleteMove,
 };
