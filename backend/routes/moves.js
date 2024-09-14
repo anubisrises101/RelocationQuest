@@ -16,4 +16,7 @@ router.get("/", moves.movesIndex);
 // POST /moves also the Create route
 router.post("/", moves.newMove);
 
+// PUT /moves/:id also the Update route
+router.put("/:moveId", moves.updateMove);
+
 module.exports = router;
