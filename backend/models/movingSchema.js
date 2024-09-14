@@ -23,11 +23,9 @@ const movingSchema = new Schema({
   }],
   departMover: {
     type: companySchema,
-    required: true,
   },
   destMover: {
     type: companySchema,
-    required: true,
   },
   rentals: [{
     type: rentalSchema,

@@ -28,11 +28,8 @@ app.use(require('./middleware/checkToken'));
 // API Routes
 app.use('/api/auth', require('./routes/auth'));
 const ensureLoggedIn = require('./middleware/ensureLoggedIn');
-// Remember to use ensureLoggedIn middleware when mounting
-// routes and/or within the route modules to protect routes
-// that require a logged in user either
-// For example:
-// app.use('/api/posts', ensureLoggedIn, require('./routes/posts'));
+
+app.use('/api/moves', ensureLoggedIn, require('./routes/moves'));
 
 // Use a "catch-all" route to deliver the frontend's production index.html
 app.get('*', function (req, res) {

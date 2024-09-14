@@ -3,6 +3,7 @@ import * as authService from '../../services/authService';
 
 export default function SignUpPage({ setUser }) {
   const [formData, setFormData] = useState({
+    username: '',
     name: '',
     email: '',
     password: '',
@@ -33,6 +34,14 @@ export default function SignUpPage({ setUser }) {
     <>
       <h2>Sign Up!</h2>
       <form autoComplete="off" onSubmit={handleSubmit}>
+        <label>Username</label>
+        <input
+          type="text"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+          required
+        />
         <label>Name</label>
         <input
           type="text"

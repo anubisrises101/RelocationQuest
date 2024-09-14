@@ -13,6 +13,7 @@ async function signup(req, res) {
     const token = createJWT(user);
     res.json(token);
   } catch (err) {
+    console.error(err);
     res.status(400).json({ message: 'Duplicate email' });
   }
 }
