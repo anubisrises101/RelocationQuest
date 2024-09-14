@@ -21,7 +21,6 @@ async function newMove(req, res) {
     const newMoves = await Moving.create(req.body);
     res.status(201).json(newMoves);
   } catch (error) {
-    console.log(error);
     res.status(500).json(error);
   }
 }
@@ -54,10 +53,9 @@ async function deleteMove(req, res) {
     const deletedMove = await Moving.findByIdAndDelete(req.params.moveId);
     res.status(200).json(deletedMove);
   } catch (error) {
-    console.error(error);
     res.status(500).json(error);
   }
-};
+}
 
 module.exports = {
   movesIndex,
