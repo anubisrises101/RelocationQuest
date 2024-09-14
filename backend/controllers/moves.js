@@ -3,7 +3,6 @@ const router = express.Router();
 const Moving = require("../models/movingSchema");
 const User = require("../models/user");
 
-
 // All routes start with /api/moves
 
 // GET /moves also the Show route
@@ -16,6 +15,19 @@ async function movesIndex(req, res) {
   }
 }
 
-module.exports = {
-    movesIndex,
+// POST /moves also the Create route
+async function newMove(req, res) {
+  try {
+    req.body.author = req.user._id;
+    const newMoves = await Moving.create(req.body);
+    res.status(201).json(newMoves);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
 }
+
+module.exports = {
+  movesIndex,
+  newMove,
+};

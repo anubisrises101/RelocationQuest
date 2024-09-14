@@ -8,7 +8,6 @@ const movingSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true,
   },
   title: {
     type: String,

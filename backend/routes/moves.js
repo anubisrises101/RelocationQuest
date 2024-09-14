@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const checkToken = require("../middleware/checkToken");
 const moves = require("../controllers/moves");
@@ -11,6 +11,9 @@ router.use(checkToken);
 // All routes start with /api/moves
 
 // GET /moves also the Show route
-router.get("/", moves.movesIndex) 
+router.get("/", moves.movesIndex);
+
+// POST /moves also the Create route
+router.post("/", moves.newMove);
 
 module.exports = router;
