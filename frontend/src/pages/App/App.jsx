@@ -1,13 +1,11 @@
-import { useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { getUser } from '../../services/authService';
-import './App.css';
-import NavBar from '../../components/NavBar/NavBar';
-import HomePage from '../HomePage/HomePage';
-import PostListPage from '../PostListPage/PostListPage';
-import NewPostPage from '../NewPostPage/NewPostPage';
-import SignUpPage from '../SignUpPage/SignUpPage';
-import LogInPage from '../LogInPage/LogInPage';
+import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { getUser } from "../../services/authService";
+import "./App.css";
+import NavBar from "../../components/NavBar/NavBar";
+import HomePage from "../HomePage/HomePage";
+import SignUpPage from "../SignUpPage/SignUpPage";
+import LogInPage from "../LogInPage/LogInPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -19,8 +17,8 @@ function App() {
         {user ? (
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/posts" element={<PostListPage />} />
-            <Route path="/posts/new" element={<NewPostPage />} />
+            {/* <Route path="/posts" element={<PostListPage />} />
+            <Route path="/posts/new" element={<NewPostPage />} /> */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         ) : (

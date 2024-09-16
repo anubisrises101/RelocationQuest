@@ -18,7 +18,7 @@ const movingSchema = new Schema({
     required: true,
   },
   apartments: [{
-    type: apartmentSchema,F
+    type: apartmentSchema,
   }],
   departMover: {
     type: companySchema,
