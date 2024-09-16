@@ -6,6 +6,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
 import SignUpPage from "../SignUpPage/SignUpPage";
 import LogInPage from "../LogInPage/LogInPage";
+import MovePage from "../MovePage/MovePage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -17,8 +18,8 @@ function App() {
         {user ? (
           <Routes>
             <Route path="/" element={<HomePage />} />
-            {/* <Route path="/posts" element={<PostListPage />} />
-            <Route path="/posts/new" element={<NewPostPage />} /> */}
+            <Route path="/moves" element={<MovePage />} />
+            {/* // <Route path="/posts/new" element={<NewPostPage />} /> */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         ) : (

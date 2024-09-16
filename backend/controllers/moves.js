@@ -7,8 +7,8 @@ const User = require("../models/user");
 // GET /moves also the Show route
 async function movesIndex(req, res) {
   try {
-    const moves = await Moving.find({});
-    res.status(200).json(moves[0]);
+    const moves = await Moving.find({ userId: req.user._id });
+    res.status(200).json(moves);
   } catch (error) {
     res.status(500).json(error);
   }

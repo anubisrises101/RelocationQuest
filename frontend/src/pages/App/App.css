@@ -1,6 +1,7 @@
 #react-app {
   display: grid;
   grid-template-rows: auto auto;
+  background-color: blueviolet;
 }
 
 #main-section {
