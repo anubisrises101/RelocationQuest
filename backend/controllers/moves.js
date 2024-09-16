@@ -6,8 +6,10 @@ const User = require("../models/user");
 
 // GET /moves also the Show route
 async function movesIndex(req, res) {
+  console.log(req.user._id);
   try {
     const moves = await Moving.find({ userId: req.user._id });
+    console.log(moves);
     res.status(200).json(moves);
   } catch (error) {
     res.status(500).json(error);
@@ -27,7 +29,7 @@ async function showMove(req, res) {
 // POST /moves also the Create route
 async function newMove(req, res) {
   try {
-    req.body.user = req.user._id;
+    req.body.userId = req.user._id;
     const newMoves = await Moving.create(req.body);
     res.status(201).json(newMoves);
   } catch (error) {

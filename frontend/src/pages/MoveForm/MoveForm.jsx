@@ -1,6 +1,7 @@
 import * as moveService from "../../services/movesService";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 
 
 export default function MoveForm() {
@@ -11,6 +12,7 @@ export default function MoveForm() {
     rating: "",
     genre: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
@@ -24,6 +26,7 @@ export default function MoveForm() {
     } else {
       moveService.handleAddMove(formData);
     }
+    navigate("/moves");
   };
 
   useEffect(() => {
@@ -37,7 +40,7 @@ export default function MoveForm() {
   return (
     <main>
       <form onSubmit={handleSubmit}>
-      <h1>{hootId ? 'Edit Hoot' : 'New Hoot'}</h1>
+      <h1>{movesId ? 'Edit Move' : 'New Move'}</h1>
         <label htmlFor="title-input">Title</label>
         <input
           required
@@ -47,30 +50,68 @@ export default function MoveForm() {
           value={formData.title}
           onChange={handleChange}
         />
-        <label htmlFor="text-input">Text</label>
+        <label htmlFor="date-input">Date</label>
         <textarea
           required
           type="text"
-          name="text"
-          id="text-input"
-          value={formData.text}
+          name="date"
+          id="date-input"
+          value={formData.date}
           onChange={handleChange}
         />
-        <label htmlFor="category-input">Category</label>
-        <select
-          required
-          name="category"
-          id="category-input"
-          value={formData.category}
-          onChange={handleChange}
-        >
-          <option value="News">News</option>
-          <option value="Games">Games</option>
-          <option value="Music">Music</option>
-          <option value="Movies">Movies</option>
-          <option value="Sports">Sports</option>
-          <option value="Television">Television</option>
-        </select>
+        {movesId && (
+          <>
+            {/* <label htmlFor="apartments-input">Apartments</label>
+            <input
+              type="text"
+              name="apartments"
+              id="apartments-input"
+              value={formData.apartments}
+              onChange={handleChange}
+            />
+            <label htmlFor="departMover-input">Depart Mover</label>
+            <input
+              type="text"
+              name="departMover"
+              id="departMover-input"
+              value={formData.departMover}
+              onChange={handleChange}
+            />
+            <label htmlFor="destMover-input">Dest Mover</label>
+            <input
+              type="text"
+              name="destMover"
+              id="destMover-input"
+              value={formData.destMover}
+              onChange={handleChange}
+            />
+            <label htmlFor="rentals-input">Rentals</label>
+            <input
+              type="text"
+              name="rentals"
+              id="rentals-input"
+              value={formData.rentals}
+              onChange={handleChange}
+            /> */}
+            <label htmlFor="transitCost-input">Transit Cost</label>
+            <input
+              type="text"
+              name="transitCost"
+              id="transitCost-input"
+              value={formData.transitCost}
+              onChange={handleChange}
+            />
+            <label htmlFor="hotelCost-input">Hotel Cost</label>
+            <input
+              type="text"
+              name="hotelCost"
+              id="hotelCost-input"
+              value={formData.hotelCost}
+              onChange={handleChange}
+            />
+          </>
+
+        )}
         <button type="submit">SUBMIT</button>
       </form>
     </main>
