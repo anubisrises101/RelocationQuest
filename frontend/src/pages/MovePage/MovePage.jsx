@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as moveService from "../../services/movesService";
-import "./MovePage.css";
+// import "./MovePage.css";
 
 export default function MovePage() {
   const [moves, setMoves] = useState([]);
@@ -9,6 +9,7 @@ export default function MovePage() {
   useEffect(() => {
     async function fetchMoves() {
       const moves = await moveService.getAll();
+      console.log(moves);
       setMoves(moves);
     }
     fetchMoves();
@@ -23,16 +24,16 @@ export default function MovePage() {
         <Link to="/moves/new">Create a new move</Link>
       </>
     );
-  }
-
+  } else {
   return (
     <>
-      <h1 id="title">Move Headquarters</h1>
+      <h1 className="move-page-title">Move Headquarters</h1>
       <section>
         {moves.map((move) => (
-          <article key={move._id}>{move.text}</article>
+          <Link to={`/moves/${move._id}`} key={move._id}>{move.title}</Link>
         ))}
       </section>
     </>
   );
+  }
 }

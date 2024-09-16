@@ -14,6 +14,16 @@ async function movesIndex(req, res) {
   }
 }
 
+// GET /moves/:id also the Show route
+async function showMove(req, res) {
+  try {
+    const move = await Moving.findById(req.params.moveId);
+    res.status(200).json(move);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
+
 // POST /moves also the Create route
 async function newMove(req, res) {
   try {
@@ -59,6 +69,7 @@ async function deleteMove(req, res) {
 }
 
 module.exports = {
+  showMove,
   movesIndex,
   newMove,
   updateMove,

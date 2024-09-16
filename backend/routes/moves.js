@@ -22,4 +22,6 @@ router.put("/:moveId", moves.updateMove);
 // DELETE /moves/:id also the Destroy route
 router.delete("/:moveId", moves.deleteMove);
 
+router.get("/:moveId", moves.showMove);
+
 module.exports = router;

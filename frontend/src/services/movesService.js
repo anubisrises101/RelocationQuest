@@ -7,5 +7,9 @@ export function getAll() {
 }
 
 export function show (moveId) {
-    return sendRequest(BASE_PATH, moveId, 'GET');
+    return sendRequest(`${BASE_PATH}/${moveId}`, 'GET');
+}
+
+export function handleAddMove (formData) {
+    return sendRequest(BASE_PATH, 'POST', formData);
 }
