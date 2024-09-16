@@ -17,11 +17,12 @@ async function movesIndex(req, res) {
 // POST /moves also the Create route
 async function newMove(req, res) {
   try {
-    req.body.userId = req.user._id;
+    req.body.user = req.user._id;
     const newMoves = await Moving.create(req.body);
     res.status(201).json(newMoves);
   } catch (error) {
     res.status(500).json(error);
+
   }
 }
 

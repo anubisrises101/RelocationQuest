@@ -14,15 +14,11 @@ mongoose.connection.on("connected", () => {
 });
 
 app.use(logger("dev"));
-// Serve static assets from the frontend's built code folder (dist)
+
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
-// Note that express.urlencoded middleware is not needed
-// because forms are not submitted!
+
 app.use(express.json());
 
-// Middleware to check the request's headers for a JWT and
-// verify that it's a valid.  If so, it will assign the
-// user object in the JWT's payload to req.user
 app.use(require("./middleware/checkToken"));
 
 // API Routes
@@ -31,7 +27,6 @@ const ensureLoggedIn = require("./middleware/ensureLoggedIn");
 
 app.use("/api/moves", ensureLoggedIn, require("./routes/moves"));
 
-// Use a "catch-all" route to deliver the frontend's production index.html
 app.get("*", function (req, res) {
   console.log(__dirname);
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
