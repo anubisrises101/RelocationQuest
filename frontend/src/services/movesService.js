@@ -18,3 +18,6 @@ export function update (movesId, formData) {
     return sendRequest(`${BASE_PATH}/${movesId}`, 'PUT', formData);
 }
 
+export function deleteMove (movesId) {
+    return sendRequest(`${BASE_PATH}/${movesId}`, 'DELETE');
+}

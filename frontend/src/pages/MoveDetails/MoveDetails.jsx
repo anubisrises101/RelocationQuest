@@ -17,6 +17,8 @@ const MoveDetails = (props) => {
     fetchMove();
   }, [movesId]);
 
+
+
   if (!move) return <main>Unable to retrieve move</main>;
   return (
     <main>

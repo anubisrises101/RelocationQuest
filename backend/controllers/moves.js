@@ -57,18 +57,19 @@ async function updateMove(req, res) {
 }
 
 // DELETE /moves/:id also the Destroy route
-async function deleteMove(req, res) {
+const deleteMove = async (req, res) => {
   try {
-    const move = await Moving.findById(req.params.moveId).populate("userId");
-    if (!move.userId.equals(req.user._id)) {
-      return res.status(403).send("You're not allowed to do that!");
+    const { movesId } = req.params;
+    const deletedMove = await Moving.findByIdAndDelete(movesId);
+    if (!deletedMove) {
+      return res.status(404).json({ message: 'Move not found' });
     }
-    const deletedMove = await Moving.findByIdAndDelete(req.params.moveId);
-    res.status(200).json(deletedMove);
+    res.status(200).json({ message: 'Move deleted successfully' });
   } catch (error) {
-    res.status(500).json(error);
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
   }
-}
+};
 
 // GET /moves/:id/edit also the Edit route
 async function editMove(req, res) {
