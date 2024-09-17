@@ -19,7 +19,7 @@ async function movesIndex(req, res) {
 // GET /moves/:id also the Show route
 async function showMove(req, res) {
   try {
-    const move = await Moving.findById(req.params.moveId);
+    const move = await Moving.findById(req.params.movesId);
     res.status(200).json(move);
   } catch (error) {
     res.status(500).json(error);

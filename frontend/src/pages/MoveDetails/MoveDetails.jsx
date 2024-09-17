@@ -4,11 +4,12 @@ import * as movesService from "../../services/movesService";
 
 const MoveDetails = (props) => {
   const { movesId } = useParams();
-
+    console.log("movesId", movesId);
   const [move, setMove] = useState(null);
 
   useEffect(() => {
     const fetchMove = async () => {
+        console.log("movesId", movesId);
       const moveData = await movesService.show(movesId);
       console.log("moveData", moveData);
       setMove(moveData);
@@ -16,7 +17,7 @@ const MoveDetails = (props) => {
     fetchMove();
   }, [movesId]);
 
-  if (!move) return <main>Loading...</main>;
+  if (!move) return <main>Unable to retrieve move</main>;
   return (
     <main>
       <header>
@@ -30,11 +31,11 @@ const MoveDetails = (props) => {
       </a>
       <label htmlFor="departMover-input">Depart Mover</label>
       <a href="../MoverPage/MoverPage.jsx">
-        <button type="button">Depart Mover</button>
+        <button type="button">Origin Mover</button>
       </a>
       <label htmlFor="destMover-input">Dest Mover</label>
       <a href="../MoverPage/MoverPage.jsx">
-        <button type="button">Dest Mover</button>
+        <button type="button">Destination Mover</button>
       </a>
       <label htmlFor="rentals-input">Rentals</label>
       <a href="../RentalPage/RentalPage.jsx">

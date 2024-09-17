@@ -22,8 +22,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/moves" element={<MovePage />} />
             <Route path="/moves/new" element={<MoveForm  />} />
-            <Route path="/moves/:moveId" element={<MoveDetails />} />
-            <Route path="/moves/:moveId/edit" element={<MoveForm />} />
+            <Route path="/moves/:movesId" element={<MoveDetails user={user} />} />
+            <Route path="/moves/:movesId/edit" element={<MoveForm />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         ) : (
