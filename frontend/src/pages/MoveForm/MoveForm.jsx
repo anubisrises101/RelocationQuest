@@ -2,36 +2,44 @@ import * as moveService from "../../services/movesService";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
-
 export default function MoveForm() {
   const { movesId } = useParams();
   const [formData, setFormData] = useState({
     title: "",
-    description: "",
-    rating: "",
-    genre: "",
+    date: "",
+    apartments: [],
+    departMover: null,
+    destMover: null,
+    rentals: [],
+    transitCost: "",
+    hotelCost: "",
   });
   const navigate = useNavigate();
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
-  
+
+  const handleUpdateMove = async (movesId, formData) => {
+    console.log("formData", formData);
+    await moveService.update(movesId, formData);
+    navigate(`/moves/${movesId}`);
+  }
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (movesId) {
-      moveService.handleUpdateMove(movesId, formData);
+      handleUpdateMove(movesId, formData);
     } else {
       moveService.handleAddMove(formData);
     }
     navigate("/moves");
   };
 
+
   useEffect(() => {
     const fetchMove = async () => {
-      const move = await moveService.getOne(movesId);
+      const move = await moveService.show(movesId);
       setFormData(move);
     };
     if (movesId) fetchMove();
@@ -40,7 +48,7 @@ export default function MoveForm() {
   return (
     <main>
       <form onSubmit={handleSubmit}>
-      <h1>{movesId ? 'Edit Move' : 'New Move'}</h1>
+        <h1>{movesId ? "Edit Move" : "New Move"}</h1>
         <label htmlFor="title-input">Title</label>
         <input
           required
@@ -62,32 +70,21 @@ export default function MoveForm() {
         {movesId && (
           <>
             <label htmlFor="apartments-input">Apartments</label>
-            <a href="../ApartmentPage/ApartmentPage.jsx"><button type="button">Add Apartment</button></a>
-            
-            {/* // <label htmlFor="departMover-input">Depart Mover</label>
-            // <input
-            //   type="text"
-            //   name="departMover"
-            //   id="departMover-input"
-            //   value={formData.departMover}
-            //   onChange={handleChange}
-            // />
-            // <label htmlFor="destMover-input">Dest Mover</label>
-            // <input
-            //   type="text"
-            //   name="destMover"
-            //   id="destMover-input"
-            //   value={formData.destMover}
-            //   onChange={handleChange}
-            // />
-            // <label htmlFor="rentals-input">Rentals</label>
-            // <input
-            //   type="text"
-            //   name="rentals"
-            //   id="rentals-input"
-            //   value={formData.rentals}
-            //   onChange={handleChange}
-            // /> */}
+            <a href="../ApartmentPage/ApartmentPage.jsx">
+              <button type="button">Add Apartment</button>
+            </a>
+            <label htmlFor="departMover-input">Departure Mover</label>
+            <a href="../MoversPage/MoversPage.jsx">
+              <button type="button">Add Departure Mover</button>
+            </a>
+            <label htmlFor="destMover-input">Dest Mover</label>
+            <a href="../MoversPage/MoversPage.jsx">
+              <button type="button">Add Destination Mover</button>
+            </a>
+            <label htmlFor="rentals-input">Rentals</label>
+            <a href="../RentalPage/RentalPage.jsx">
+              <button type="button">Add Rental</button>
+            </a>
             <label htmlFor="transitCost-input">Transit Cost</label>
             <input
               type="text"
@@ -105,7 +102,6 @@ export default function MoveForm() {
               onChange={handleChange}
             />
           </>
-
         )}
         <button type="submit">SUBMIT</button>
       </form>

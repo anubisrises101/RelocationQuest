@@ -9,7 +9,6 @@ export default function MovePage() {
   useEffect(() => {
     async function fetchMoves() {
       const moves = await moveService.getAll();
-      console.log(moves);
       setMoves(moves);
     }
     fetchMoves();

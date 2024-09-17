@@ -13,3 +13,8 @@ export function show (movesId) {
 export function handleAddMove (formData) {
     return sendRequest(BASE_PATH, 'POST', formData);
 }
+
+export function update (movesId, formData) {
+    return sendRequest(`${BASE_PATH}/${movesId}`, 'PUT', formData);
+}
+

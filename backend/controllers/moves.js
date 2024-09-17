@@ -6,10 +6,8 @@ const User = require("../models/user");
 
 // GET /moves also the Show route
 async function movesIndex(req, res) {
-  console.log(req.user._id);
   try {
     const moves = await Moving.find({ userId: req.user._id });
-    console.log(moves);
     res.status(200).json(moves);
   } catch (error) {
     res.status(500).json(error);
@@ -40,16 +38,18 @@ async function newMove(req, res) {
 
 // PUT /moves/:id also the Update route
 async function updateMove(req, res) {
+  console.log('put', req.body)
   try {
-    const move = await Moving.findById(req.params.moveId).populate("userId");
-    if (!move.userId.equals(req.user._id)) {
-      return res.status(403).send("You're not allowed to do that!");
-    }
+    // const move = await Moving.findById(req.params.moveId).populate("userId");
+    // if (!move.userId.equals(req.user._id)) {
+    //   return res.status(403).send("You're not allowed to do that!");
+    // }
     const updatedMove = await Moving.findByIdAndUpdate(
-      req.params.moveId,
+      req.params.movesId,
       req.body,
       { new: true }
     );
+    console.log('updatedMove', updatedMove);
     res.status(200).json(updatedMove);
   } catch (error) {
     res.status(500).json(error);
