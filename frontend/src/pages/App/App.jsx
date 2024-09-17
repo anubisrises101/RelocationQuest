@@ -8,6 +8,7 @@ import SignUpPage from "../SignUpPage/SignUpPage";
 import LogInPage from "../LogInPage/LogInPage";
 import MovePage from "../MovePage/MovePage";
 import MoveForm from "../MoveForm/MoveForm";
+import MoveDetails from "../MoveDetails/MoveDetails";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -21,7 +22,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/moves" element={<MovePage />} />
             <Route path="/moves/new" element={<MoveForm  />} />
-            {/* <Route path="/moves/:moveId" element={<ShowMovePage />} /> */}
+            <Route path="/moves/:moveId" element={<MoveDetails />} />
             <Route path="/moves/:moveId/edit" element={<MoveForm />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

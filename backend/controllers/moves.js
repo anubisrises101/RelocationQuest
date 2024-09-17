@@ -70,7 +70,18 @@ async function deleteMove(req, res) {
   }
 }
 
+// GET /moves/:id/edit also the Edit route
+async function editMove(req, res) {
+  try {
+    const move = await Moving.findById(req.params.moveId);
+    res.status(200).json(move);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
+
 module.exports = {
+  editMove,
   showMove,
   movesIndex,
   newMove,

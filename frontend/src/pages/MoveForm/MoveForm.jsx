@@ -61,38 +61,33 @@ export default function MoveForm() {
         />
         {movesId && (
           <>
-            {/* <label htmlFor="apartments-input">Apartments</label>
-            <input
-              type="text"
-              name="apartments"
-              id="apartments-input"
-              value={formData.apartments}
-              onChange={handleChange}
-            />
-            <label htmlFor="departMover-input">Depart Mover</label>
-            <input
-              type="text"
-              name="departMover"
-              id="departMover-input"
-              value={formData.departMover}
-              onChange={handleChange}
-            />
-            <label htmlFor="destMover-input">Dest Mover</label>
-            <input
-              type="text"
-              name="destMover"
-              id="destMover-input"
-              value={formData.destMover}
-              onChange={handleChange}
-            />
-            <label htmlFor="rentals-input">Rentals</label>
-            <input
-              type="text"
-              name="rentals"
-              id="rentals-input"
-              value={formData.rentals}
-              onChange={handleChange}
-            /> */}
+            <label htmlFor="apartments-input">Apartments</label>
+            <a href="../ApartmentPage/ApartmentPage.jsx"><button type="button">Add Apartment</button></a>
+            
+            {/* // <label htmlFor="departMover-input">Depart Mover</label>
+            // <input
+            //   type="text"
+            //   name="departMover"
+            //   id="departMover-input"
+            //   value={formData.departMover}
+            //   onChange={handleChange}
+            // />
+            // <label htmlFor="destMover-input">Dest Mover</label>
+            // <input
+            //   type="text"
+            //   name="destMover"
+            //   id="destMover-input"
+            //   value={formData.destMover}
+            //   onChange={handleChange}
+            // />
+            // <label htmlFor="rentals-input">Rentals</label>
+            // <input
+            //   type="text"
+            //   name="rentals"
+            //   id="rentals-input"
+            //   value={formData.rentals}
+            //   onChange={handleChange}
+            // /> */}
             <label htmlFor="transitCost-input">Transit Cost</label>
             <input
               type="text"
