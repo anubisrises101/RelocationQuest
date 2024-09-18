@@ -5,9 +5,11 @@
   padding: 2vmin;
   color: rgb(255, 255, 255);
   background-image: linear-gradient(to right, rgb(0, 0, 0, 0.5) , rgba(38, 0, 190, 0.5));
+  
 
 }
 
-.NavBar span {
-  color: rgb(0, 0, 0);
+.NavBar span, a {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
 }

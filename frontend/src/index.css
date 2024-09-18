@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: #1a1a1a;
+  color: #ffffff;
   background-color: whitesmoke;
 
   font-synthesis: none;
@@ -46,7 +46,7 @@ button {
 }
 button:hover {
   background-color: white;
-  color: #1a1a1a;
+  color: #232323;
   border-color: #1a1a1a;
 }
 button:disabled {
@@ -58,7 +58,7 @@ a {
   padding: 0.5vmin;
   font-size: 2vmin;
   text-decoration: none;
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 a:hover {

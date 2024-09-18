@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <div id="one">
-        <h1>Get ready for a new adventure!</h1>
+        <h1 id="catchphrase">Get ready for a new adventure!</h1>
       </div>
       <div className="form-container" id="two">
         <div className="login-form">
@@ -19,7 +19,7 @@ export default function HomePage() {
           </form>
         </div>
         <div className="animation">
-          <image src="/animation/sword_animation.gif" alt="animation" id="sword">ANIMATION IMAGE</image>
+          <img src="/animation/sword_animation.gif" alt="animation" id="sword"/>
         </div>
         <div className="signup-box">
           <p>To sign up</p>

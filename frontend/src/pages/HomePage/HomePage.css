@@ -10,10 +10,18 @@
   align-items: center;
 }
 
+
+
 #three {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#catchphrase {
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+  text-shadow: 4px 4px 4px white;
 }
 
 .login-form {
@@ -21,6 +29,7 @@
   padding: 20px;
   border-radius: 10px;
   margin: 10px;
+  box-shadow: 0 0 10px 5px rgba(34, 0, 255);
 }
 
 .login-form input {
@@ -41,6 +50,7 @@
   margin: 10px;
   height: 43vh;
   width: 15vw;
+  box-shadow: 0 0 10px 5px rgba(34, 0, 255);
 }
 
 .signup-box p,
