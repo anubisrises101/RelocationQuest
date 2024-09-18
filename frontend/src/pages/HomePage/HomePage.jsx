@@ -32,12 +32,12 @@ export default function HomePage() {
       <h3>Adventure Progress</h3>
       </div>
       <footer id="four">
-        <div>
+        <div id="largefoot">
           <p>McKenzie Coding © 2024</p>
         </div>
-        <div>
-          <a href="https://www.linkedin.com/in/your-linkedin-profile">
-            LinkedIn
+        <div id="longfoot">
+          <a href="https://www.linkedin.com/in/phillip-mckenzie/">
+            My LinkedIn Profile
           </a>
         </div>
       </footer>

@@ -10,11 +10,8 @@
 }
 
 footer {
-  width: 100vw;
   position: absolute;
   bottom: 0px;
-  padding: 20px;
-  background-color: #3b0b98;
 }
 
 footer p,
@@ -26,6 +23,54 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+} 
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+}
+
+#longfoot {
+  display: flex;
+  justify-content: center;
+  background-color: #2a117b;
+  color: white;
+  padding: 20px;
+  transform: skew(-20deg);
+  margin: 20px;
+  width: 75vw;
+  padding: 0px;
+  height: 4vh;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  flex-direction: column;
+  z-index: 10;
+  left: 21vw;
+  margin-bottom: 0;
+  box-shadow:#915eff 0px 0px 10px 5px;
+}
+
+#largefoot {
+  display: flex;
+  justify-content: center;
+  background-color: #915eff;
+  color: white;
+  padding: 20px;
+  transform: skew(-20deg);
+  margin: 20px;
+  width: 20vw;
+  padding: 0px;
+  height: 7vh;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  flex-direction: column;
+  z-index: 10;
+  margin-bottom: 0px;
+  box-shadow: #2a117b 0px 0px 10px 5px;
 }
 
 button {
