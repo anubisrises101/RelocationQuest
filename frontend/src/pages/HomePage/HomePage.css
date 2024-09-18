@@ -1,26 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  /* font-family: 'Press Start 2P', cursive;
-  background: #121212; */
-  color: white;
-}
-
-
-
 .home-page {
-  text-align: center;
-  padding: 20px;
-}
-
-.form-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 20px 0;
+}
+#two {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-form {
@@ -41,44 +34,28 @@ body {
 }
 
 .signup-box {
+  justify-self: end;
   background: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 10px;
   margin: 10px;
+  height: 43vh;
+  width: 15vw;
 }
 
 .signup-box p,
 .signup-box a {
   margin: 10px 0;
   color: white;
+
+  font-size: 30px;
+  text-shadow: blueviolet;
 }
 
-button {
-  background: #8b00ff;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+#sword {
+  width: 100%;
 }
 
-button:hover {
-  background: #9b30ff;
-}
-
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #3b0b98;
-}
-
-footer p,
-footer a {
-  color: white;
-  text-decoration: none;
-  font-size: 12px;
-}
-
-footer a:hover {
-  text-decoration: underline;
+#logo {
+  width: 60%;
 }

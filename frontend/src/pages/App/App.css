@@ -1,23 +1,65 @@
 #react-app {
-  font-family: PixeloidSans, sans-serif;
+  font-family: "PixeloidSans", sans-serif;
   display: grid;
   grid-template-rows: auto auto;
+}
 
+@font-face {
+  font-family: "PixeloidSans";
+  src: url("fonts/PixeloidSans-mLxMm.ttf") format("truetype");
+}
+
+footer {
+  width: 100vw;
+  position: absolute;
+  bottom: 0px;
+  padding: 20px;
+  background-color: #3b0b98;
+}
+
+footer p,
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background: #8b00ff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #9b30ff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+
+  color: white;
 }
 
 #main-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../../images/background.png');
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
-@font-face {
-  font-family: 'PixeloidSans';
-  src: url('../src/fonts/PixeloidSans-mLxMm.ttf') format('truetype');
+.home-page {
+  text-align: center;
+  padding: 20px;
 }
-

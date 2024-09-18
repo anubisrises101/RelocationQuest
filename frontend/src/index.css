@@ -1,5 +1,5 @@
 :root {
-  font-family: pixeloid, sans-serif;
+  font-family: 'PixeloidSans', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -10,6 +10,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-shadow: blueviolet 2px 2px;
+
 }
 
 * {
