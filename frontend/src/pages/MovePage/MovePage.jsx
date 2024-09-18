@@ -33,14 +33,18 @@ export default function MovePage() {
   } else {
     return (
       <>
-        <h1 className="move-page-title">Move Headquarters</h1>
-        <section>
-          {moves.map((move) => (
-            <Link to={`/moves/${move._id}`} key={move._id}>
-              {move.title}
-            </Link>
-          ))}
-        </section>
+        <div className="movefirst">
+          <h1 className="move-page-title">Move Headquarters</h1>
+        </div>
+        <div className="movesecond">
+          <section>
+            {moves.map((move) => (
+              <Link to={`/moves/${move._id}`} key={move._id}>
+                {move.title}
+              </Link>
+            ))}
+          </section>
+        </div>
       </>
     );
   }

@@ -10,7 +10,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./images/background.png');
+  background-image: url('/images/background.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -70,7 +70,6 @@ form {
   display: grid;
   gap: 1.2vmin;
   padding: 4vmin;
-  border: 0.5vmin solid #1a1a1a;
   border-radius: 1vmin;
 }
 

@@ -1,0 +1,15 @@
+.movesecond {
+    background-image: linear-gradient(
+        to right,
+        rgb(0, 0, 0, 0.5),
+        rgba(38, 0, 190, 0.5)
+    );
+    box-shadow: 0 0 10px 5px #21edff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60vh;
+    width: 40vw;
+    align-items: center;
+    margin-left: 27vw;
+}

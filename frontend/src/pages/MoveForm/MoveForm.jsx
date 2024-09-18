@@ -1,6 +1,7 @@
 import * as moveService from "../../services/movesService";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./MoveForm.css";
 
 export default function MoveForm() {
   const { movesId } = useParams();
@@ -24,7 +25,7 @@ export default function MoveForm() {
     console.log("formData", formData);
     await moveService.update(movesId, formData);
     navigate(`/moves/${movesId}`);
-  }
+  };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -36,7 +37,6 @@ export default function MoveForm() {
     navigate("/moves");
   };
 
-
   useEffect(() => {
     const fetchMove = async () => {
       const move = await moveService.show(movesId);
@@ -47,26 +47,35 @@ export default function MoveForm() {
 
   return (
     <main>
-      <form onSubmit={handleSubmit}>
-        <h1>{movesId ? "Edit Move" : "New Move"}</h1>
-        <label htmlFor="title-input">Title</label>
-        <input
-          required
-          type="text"
-          name="title"
-          id="title-input"
-          value={formData.title}
-          onChange={handleChange}
-        />
-        <label htmlFor="date-input">Date</label>
-        <textarea
-          required
-          type="text"
-          name="date"
-          id="date-input"
-          value={formData.date}
-          onChange={handleChange}
-        />
+      <form onSubmit={handleSubmit} id="moveform">
+        <div className="content">
+          <div className="newmovefirst">
+            <h1>{movesId ? "Edit Move" : "New Move"}</h1>
+          </div>
+          <div className="newmovesecond">
+            <label htmlFor="title-input">Title</label>
+            <input
+              required
+              type="text"
+              name="title"
+              id="title-input"
+              value={formData.title}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="newmovethird">
+            <label htmlFor="date-input">Date</label>
+            <textarea
+              required
+              type="text"
+              name="date"
+              id="date-input"
+              value={formData.date}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+
         {movesId && (
           <>
             <label htmlFor="apartments-input">Apartments</label>
