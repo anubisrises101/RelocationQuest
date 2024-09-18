@@ -31,16 +31,6 @@ export default function HomePage() {
       <p>PROGRESS BAR</p>
       <h3>Adventure Progress</h3>
       </div>
-      <footer id="four">
-        <div id="largefoot">
-          <p>McKenzie Coding © 2024</p>
-        </div>
-        <div id="longfoot">
-          <a href="https://www.linkedin.com/in/phillip-mckenzie/">
-            My LinkedIn Profile
-          </a>
-        </div>
-      </footer>
     </div>
   );
 }

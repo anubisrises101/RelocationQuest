@@ -10,6 +10,7 @@ import MovePage from "../MovePage/MovePage";
 import MoveForm from "../MoveForm/MoveForm";
 import MoveDetails from "../MoveDetails/MoveDetails";
 import * as moveService from "../../services/movesService";
+import ComboFooter from "../../components/ComboFooter/ComboFooter";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           </Routes>
         )}
       </section>
+      <ComboFooter />
     </main>
   );
 }
