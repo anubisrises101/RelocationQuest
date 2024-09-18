@@ -1,7 +1,8 @@
 #react-app {
+  font-family: PixeloidSans, sans-serif;
   display: grid;
   grid-template-rows: auto auto;
-  background-color: blueviolet;
+
 }
 
 #main-section {
@@ -9,4 +10,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('../../images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
+
+@font-face {
+  font-family: 'PixeloidSans';
+  src: url('../src/fonts/PixeloidSans-mLxMm.ttf') format('truetype');
+}
+
