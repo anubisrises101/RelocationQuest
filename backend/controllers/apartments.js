@@ -31,7 +31,7 @@ async function newApartment(req, res) {
     const newApartments = await Apartments.create(req.body);
     res.status(201).json(newApartments);
   } catch (error) {
-    res.status(500).json(error);
+    console.error('Error creating new apartment:', error); 
 
   }
 }
@@ -40,10 +40,6 @@ async function newApartment(req, res) {
 async function updateApartment(req, res) {
   console.log('put', req.body)
   try {
-    // const apartment = await Apartments.findById(req.params.apartmentId).populate("userId");
-    // if (!apartment.userId.equals(req.user._id)) {
-    //   return res.status(403).send("You're not allowed to do that!");
-    // }
     const updatedApartment = await Apartments.findByIdAndUpdate(
       req.params.apartmentsId,
       req.body,

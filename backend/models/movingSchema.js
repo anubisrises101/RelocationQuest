@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const apartmentSchema = require('./apartmentSchema');
-const companySchema = require('./companySchema');
-const rentalSchema = require('./rentalSchema'); 
+const Apartments = require('./apartmentSchema');
+const Company = require('./companySchema');
+const Rental = require('./rentalSchema'); 
 
 const movingSchema = new Schema({
   userId: {
@@ -18,16 +18,20 @@ const movingSchema = new Schema({
     required: true,
   },
   apartments: [{
-    type: apartmentSchema,
+    type: Schema.Types.ObjectId,
+    ref: 'Apartments',
   }],
   departMover: {
-    type: companySchema,
+    type: Schema.Types.ObjectId,
+    ref: 'Company',
   },
   destMover: {
-    type: companySchema,
+    type: Schema.Types.ObjectId,
+    ref: 'Company',
   },
   rentals: [{
-    type: rentalSchema,
+    type: Schema.Types.ObjectId,
+    ref: 'Rental',
   }],
   transitCost: {
     type: Number,

@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const apartmentSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
-    ref: user,
+    ref: 'User',
   },
   name: {
     type: String,
@@ -25,4 +25,4 @@ const apartmentSchema = new Schema({
   },
 });
 
-module.exports = apartmentSchema;
+module.exports = mongoose.model('Apartments', apartmentSchema);
