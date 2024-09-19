@@ -62,6 +62,7 @@ export default function MoveForm() {
               value={formData.title}
               onChange={handleChange}
             />
+            <br />
           </div>
           <div className="newmovethird">
             <label htmlFor="date-input">Date</label>
@@ -73,27 +74,33 @@ export default function MoveForm() {
               value={formData.date}
               onChange={handleChange}
             />
+            <br />
           </div>
-        </div>
+        
 
-        {movesId && (
+          {movesId && (
           <>
+          
             <label htmlFor="apartments-input">Apartments</label>
             <a href="../ApartmentPage/ApartmentPage.jsx">
               <button type="button">Add Apartment</button>
             </a>
+            <br />
             <label htmlFor="departMover-input">Departure Mover</label>
             <a href="../MoversPage/MoversPage.jsx">
               <button type="button">Add Departure Mover</button>
             </a>
+            <br />
             <label htmlFor="destMover-input">Dest Mover</label>
             <a href="../MoversPage/MoversPage.jsx">
               <button type="button">Add Destination Mover</button>
             </a>
+            <br />
             <label htmlFor="rentals-input">Rentals</label>
             <a href="../RentalPage/RentalPage.jsx">
               <button type="button">Add Rental</button>
             </a>
+            <br />
             <label htmlFor="transitCost-input">Transit Cost</label>
             <input
               type="text"
@@ -102,6 +109,7 @@ export default function MoveForm() {
               value={formData.transitCost}
               onChange={handleChange}
             />
+            <br />
             <label htmlFor="hotelCost-input">Hotel Cost</label>
             <input
               type="text"
@@ -110,8 +118,11 @@ export default function MoveForm() {
               value={formData.hotelCost}
               onChange={handleChange}
             />
+
+          
           </>
         )}
+        </div>
         <button type="submit">SUBMIT</button>
       </form>
     </main>
