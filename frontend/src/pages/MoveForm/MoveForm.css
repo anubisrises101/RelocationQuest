@@ -1,37 +1,29 @@
 #moveform {
-    background-image: linear-gradient(
-        to right,
-        rgb(0, 0, 0, 0.5),
-        rgba(38, 0, 190, 0.5)
-      );
-      box-shadow: 0 0 10px 5px #21edff;
-      display: flex;
-      justify-content: space-around;
-      height: 60vh;
-      width: 40vw;
-      align-items: center;
-      margin-left: 27vw;
-      margin-top: 5vh;
-      flex-direction: column;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 0, 0, 0.5),
+    rgba(38, 0, 190, 0.5)
+  );
+  box-shadow: 0 0 10px 5px #21edff;
+  display: flex;
+  justify-content: space-around;
+  height: 60vh;
+  width: 40vw;
+  align-items: center;
+  margin-left: 27vw;
+  margin-top: 5vh;
+  flex-direction: column;
 }
 
 .newmovefirst {
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 30px;
-    color: #915eff;
-    text-shadow: 4px 4px 4px #21edff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30px;
+  color: #915eff;
+  text-shadow: 4px 4px 4px #21edff;
 }
 
 .newmovesecond {
-    margin-top: 4vh;
+  margin-top: 4vh;
 }
-
-/* #content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-} */

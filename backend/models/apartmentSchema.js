@@ -13,15 +13,12 @@ const apartmentSchema = new Schema({
   },
   price: {
     type: Number,
-    required: true,
   },
   deposit: {
     type: Number,
-    required: true,
   },
   available: {
     type: String,
-    required: true,
   },
 });
 

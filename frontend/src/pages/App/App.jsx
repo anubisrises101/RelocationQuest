@@ -10,12 +10,16 @@ import MovePage from "../MovePage/MovePage";
 import MoveForm from "../MoveForm/MoveForm";
 import MoveDetails from "../MoveDetails/MoveDetails";
 import * as moveService from "../../services/movesService";
+import * as apartmentService from "../../services/apartmentService";
 import ComboFooter from "../../components/ComboFooter/ComboFooter";
+import ApartmentIndex from "../ApartmentIndex/ApartmentIndex";
+import ApartmentForm from "../ApartmentForm/ApartmentForm";
 
 
 function App() {
   const [user, setUser] = useState(getUser());
   const [move, setMove] = useState([]);
+  const [apartment, setApartment] = useState([]);
   const navigate = useNavigate();
 
   const handleDeleteMove = async (movesId) => {
@@ -27,6 +31,16 @@ function App() {
       console.error("Failed to delete move:", error);
     }
   };
+
+  // const handleDeleteMove = async (movesId) => {
+  //   try {
+  //     const deletedMove = await moveService.deleteMove(movesId);
+  //     setMove(move.filter((move) => move._id !== deletedMove._id));
+  //     navigate("/moves");
+  //   } catch (error) {
+  //     console.error("Failed to delete move:", error);
+  //   }
+  // };
 
   return (
     <main id="react-app">
@@ -40,6 +54,8 @@ function App() {
             <Route path="/moves/:movesId" element={<MoveDetails user={user} handleDeleteMove={handleDeleteMove} />} />
             <Route path="/moves/:movesId/edit" element={<MoveForm />} />
             <Route path="/login" element={<Navigate to="/" />} />
+            <Route path="/apartments" element={<ApartmentIndex user={user}/>} />
+            <Route path="/apartments/new" element={<ApartmentForm />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         ) : (

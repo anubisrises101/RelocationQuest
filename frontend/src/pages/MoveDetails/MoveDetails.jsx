@@ -30,10 +30,8 @@ const MoveDetails = (props) => {
         <div className="movesecond">
           <label htmlFor="date-input">Date</label>
           <p>{move.date}</p>
-          <label htmlFor="apartment-input">Apartment</label>
-          <a href="../ApartmentPage/ApartmentPage.jsx">
-            <button type="button">Apartments</button>
-          </a>
+          <label htmlFor="apartment-button">Apartments</label>
+          <Link to={`/apartments`}>Click here to view Apartments</Link>
           <label htmlFor="departMover-input">Depart Mover</label>
           <a href="../MoverPage/MoverPage.jsx">
             <button type="button">Origin Mover</button>
