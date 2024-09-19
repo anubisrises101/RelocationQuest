@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
+const user = require("./user");
 const { Schema } = mongoose;
 
 const apartmentSchema = new Schema({
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: user,
+  },
   name: {
     type: String,
     required: true,
@@ -15,7 +20,7 @@ const apartmentSchema = new Schema({
     required: true,
   },
   available: {
-    type: Date,
+    type: String,
     required: true,
   },
 });

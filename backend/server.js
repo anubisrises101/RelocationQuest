@@ -26,6 +26,7 @@ app.use("/api/auth", require("./routes/auth"));
 const ensureLoggedIn = require("./middleware/ensureLoggedIn");
 
 app.use("/api/moves", ensureLoggedIn, require("./routes/moves"));
+app.use("/api/apartments", ensureLoggedIn, require("./routes/apartments"));
 
 app.get("*", function (req, res) {
   console.log(__dirname);
