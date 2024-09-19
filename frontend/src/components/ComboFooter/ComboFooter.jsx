@@ -11,6 +11,7 @@ export default function ComboFooter() {
         <a href="https://www.linkedin.com/in/phillip-mckenzie/">
           My LinkedIn Profile
         </a>
+        <p>Thank you so much to: My wonderful wife for logo design, My teachers, and my classmates for all their help!</p>
       </div>
     </footer>
   );
