@@ -1,46 +1,15 @@
-.apartmentfirst {
-    margin: 3vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 30px;
-    color: #915eff;
-    text-shadow: 4px 4px 4px #21edff;
-  }
-  
-  .apartmentsecond {
+.apartmentsecond {
     background-image: linear-gradient(
-      to right,
-      rgb(0, 0, 0, 0.5),
-      rgba(38, 0, 190, 0.5)
+        to right,
+        rgb(0, 0, 0, 0.5),
+        rgba(38, 0, 190, 0.5)
     );
     box-shadow: 0 0 10px 5px #21edff;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     height: 60vh;
     width: 40vw;
     align-items: center;
-  }
-  
-  .apartmentthree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2vh;
-  }
-  
-  #apartmentindex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  #sword {
-    width: 100%;
-  }
-  
-  #logo {
-    width: 60%;
-  }
-  
+    margin-left: 27vw;
+}
