@@ -10,13 +10,7 @@ export default function HomePage() {
       </div>
       <div className="form-container" id="two">
         <div className="login-form">
-          <form>
-            <label>Login</label>
-            <input type="text" placeholder="Username" />
-            <label>Password</label>
-            <input type="password" placeholder="Password" />
-            <button type="submit">Sign In</button>
-          </form>
+          <p>To log in please click the Login button in the navbar above!!</p>
         </div>
         <div className="animation">
           <img src="/animation/sword_animation.gif" alt="animation" id="sword"/>
